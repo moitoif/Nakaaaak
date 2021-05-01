@@ -3,7 +3,7 @@
     <div class="user-form">
     <div class="form-header">アカウント作成</div>
       <div class="form-body">
-        <%= form_tag("/users/create") do %>
+        <%= form_with url:"/users/create" do |f| %>
           <p>
             <input type="text" name="name" placeholder="ユーザー名">
           </p>
