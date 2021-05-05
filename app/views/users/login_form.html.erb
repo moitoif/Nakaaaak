@@ -1,11 +1,18 @@
+<% console %>
 <main>
   <div class="container">
     <div class="user-form">
     <div class="form-header">ログイン</div>
       <div class="form-body">
-        <%= form_with url:"login" do |f| %>
+
+        <% if @error_message %>
+          <div class="form-error">
+            <%= @error_message %>
+          </div>
+        <% end %>
+        <%= form_with url:"login", local:true do |f| %>
           <p>
-            <input type="text" name="email" placeholder="メールアドレス">
+            <input type="text" name="email" placeholder="メールアドレス" value="<%= @email %>">
           </p>
           <p>
             <input type="password" name="password" placeholder="パスワード">

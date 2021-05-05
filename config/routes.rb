@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+
+  # ログイン
+  get "login" => "users#login_form"
+  post "login" => "users#login"
+
+
   # トップ
   get "/" => "home#top"
 
@@ -8,9 +14,6 @@ Rails.application.routes.draw do
   post "users/create" => "users#create"
   get "users/:id" => "users#show"
 
-
-  get "login" => "users#login_form"
-  post "login" => "users#login"
   # 画像アップロード
   get "images" => "images#index"
 
