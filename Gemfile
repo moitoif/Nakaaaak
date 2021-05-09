@@ -29,6 +29,9 @@ gem 'bcrypt', '~> 3.1.11'
 # Japanese
 gem 'rails-i18n'
 
+gem 'devise', git: "https://github.com/heartcombo/devise.git",  branch: "ca-omniauth-2"
+gem 'omniauth-twitter'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
