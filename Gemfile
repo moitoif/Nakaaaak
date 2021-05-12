@@ -32,6 +32,7 @@ gem 'rails-i18n'
 gem 'devise', git: "https://github.com/heartcombo/devise.git",  branch: "ca-omniauth-2"
 gem 'omniauth-twitter'
 
+gem 'dotenv-rails'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

@@ -28,3 +28,5 @@
 
 # Ignore Setting.json
 .vscode/*
+
+.env
