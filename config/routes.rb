@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
+  # トップ
+  get "/" => "home#top"
   
   devise_for :users, controllers: {
     sessions: 'users/sessions'
   }
 
-  # トップ
-  get "/" => "home#top"
   
   # ログイン
   get "login" => "users#login_form"
