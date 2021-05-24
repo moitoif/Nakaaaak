@@ -1,0 +1,28 @@
+<main>
+  <div class="container">
+    <div class="form-header">
+      イラスト投稿
+    </div>
+    <div class="form-body">
+      <%= form_with url:"upload" do |f| %>
+        <section>
+          <div class="illust-field">
+            <%= f.file_field "illust" %>
+          </div>
+          <div class="field">
+            <%= f.text_field "title", placeholder: "タイトル" %>
+          </div>
+          <div class="field">
+            <%= f.text_field "tag", placeholder: "タグ" %>
+          </div>
+          <div class="field">
+            <%= f.text_area "caption", placeholder: "説明" %>
+          </div>
+          <div class="action">
+            <%= f.submit "投稿" %>
+          </div>
+        </section>
+      <% end %>
+    </div>
+  </div>
+</main>

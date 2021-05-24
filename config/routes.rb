@@ -5,13 +5,16 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
     sessions: 'users/sessions'
   }
-
   
   # ログイン
   get "login" => "users#login_form"
   post "login" => "users#login"
 
+  get "mypage" => "users#show"
 
+  # イラスト投句
+  get "upload" => "illusts#upload_form"
+  post "upload" => "illusts#upload"
 
   # ユーザ
   # 新規登録
