@@ -30,3 +30,6 @@
 .vscode/*
 
 .env
+
+# Public Directory
+/public/users
