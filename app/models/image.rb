@@ -13,4 +13,8 @@ class Image < ApplicationRecord
 
     return "#{serial}.jpg"
   end
+
+  def get_illust_all(current_user_id)
+    return Image.where(user_id: current_user_id)
+  end
 end

@@ -1,10 +1,10 @@
 <main>
   <div class="container">
     <div class="form-header">
-      イラスト投稿編集
+      イラスト投稿
     </div>
     <div class="form-body">
-      <%= form_with url:"illust_update" do |f| %>
+      <%= form_with url:"upload" do |f| %>
         <section>
           <div class="illust-field">
             <%= f.file_field "illust", accept: 'image/jpg,image/ipeg,image/png,image/gif' %>

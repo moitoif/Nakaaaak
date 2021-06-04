@@ -2,7 +2,10 @@ class IllustsController < ApplicationController
   before_action :authenticate_user!
 
   def upload_form
-    @current_user = current_user.id 
+    images = Image.new
+    @current_user = current_user.id
+    # イラスト全取得
+    @illusts = images.get_Illust_All(current_user.id)
   end
 
   def upload
@@ -30,5 +33,14 @@ class IllustsController < ApplicationController
     else
       render("illusts/upload_form")
     end
+  end
+
+  # 投稿イラスト編集
+  def edit
+
+  end
+
+  def update
+    
   end
 end

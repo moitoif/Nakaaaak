@@ -12,9 +12,11 @@ Rails.application.routes.draw do
 
   get "mypage" => "users#show"
 
-  # イラスト投句
+  # イラスト投稿
   get "upload" => "illusts#upload_form"
   post "upload" => "illusts#upload"
+  get "illust/edit" => "illusts#edit"
+  post "illust/update" => "illusts#update"
 
   # ユーザ
   # 新規登録
