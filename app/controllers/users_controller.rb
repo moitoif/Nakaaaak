@@ -36,6 +36,9 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by(id: params[:id])
-    @test = "1"
+    # @current_user = current_user.id
+    # イラスト全取得
+    image = Image.new
+    @illusts = image.get_illust_all(current_user.id)
   end
 end

@@ -1,5 +1,18 @@
 <main>
   <div class="container">
-    aaaaaa
+    <ul>
+    <% @illusts.each do |illust| %>
+      <li>
+        <div>
+          <%= illust.id %>
+          <%= illust.name %>
+          <%= illust.filename %>
+          <img src="<%="/users/#{illust.user_id}/#{illust.filename}"%>" class="mypage_all">
+        </div>
+      </li>
+    <% end %>
+    </ul>
+
+    test
   </div>
 </main>

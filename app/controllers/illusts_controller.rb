@@ -4,8 +4,6 @@ class IllustsController < ApplicationController
   def upload_form
     images = Image.new
     @current_user = current_user.id
-    # イラスト全取得
-    @illusts = images.get_Illust_All(current_user.id)
   end
 
   def upload
@@ -41,6 +39,6 @@ class IllustsController < ApplicationController
   end
 
   def update
-    
+
   end
 end
