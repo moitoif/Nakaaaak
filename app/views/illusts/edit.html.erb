@@ -1,13 +1,16 @@
 <main>
   <div class="container">
     <div class="form-header">
-      イラスト投稿
+      イラスト投稿編集
     </div>
-    <div class="form-body">
+    <div class="form-body" id="app">
       <%= form_with url:"upload" do |f| %>
         <section>
           <div class="illust-field">
-            <%= f.file_field "illust", accept: 'image/jpg,image/ipeg,image/png,image/gif' %>
+            <input type="file" name="illust" id="illust" accept="image/jpg,image/jpeg,image/png,image/gif" ref="preview" v-on:change="uploadFile">
+            <div v-if="url">
+              <img :src="url" style="width: 400px; height: auto;">
+            </div>
           </div>
           <div class="field">
             <%= f.text_field "title", placeholder: "タイトル" %>
@@ -22,4 +25,22 @@
       <% end %>
     </div>
   </div>
+  <script>
+     new Vue({
+        el: "#app",
+        data() {
+          return {
+            message:"Try Preview!",
+            url: "",
+          }
+        },
+        methods: {
+          uploadFile() {
+            const file = this.$refs.preview.files[0];
+            this.url = URL.createObjectURL(file)
+          }
+        }
+      })
+  </script>
+
 </main>
