@@ -7,32 +7,32 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-
   </head>
 
   <body>
-    <header>
-      <nav>
-        <div class="header-logo">
-          <%= link_to("晒せ！", "/") %>
-        </div>
+      <header>
+        <nav>
+          <div class="header-logo">
+            <%= link_to("晒せ！", "/") %>
+          </div>
 
-        <ul class="header-menus">
-          <% if user_signed_in? %>
-            <li><%= link_to 'イラスト投稿', upload_path %></li>
-            <li><%= link_to 'プロフィール変更', edit_user_registration_path %></li>
-            <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
-          <% else %>
-            <li><%= link_to 'アカウント登録', new_user_registration_path %></li>
-            <li><%= link_to 'ログイン', new_user_session_path %></li>
-          <% end %>
+          <ul class="header-menus">
+            <% if user_signed_in? %>
+              <li><%= link_to 'イラスト投稿', upload_path %></li>
+              <li><%= link_to 'プロフィール変更', edit_user_registration_path %></li>
+              <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+            <% else %>
+              <li><%= link_to 'アカウント登録', new_user_registration_path %></li>
+              <li><%= link_to 'ログイン', new_user_session_path %></li>
+            <% end %>
 
-        </ul>
-      </nav>
-    </header>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
+          </ul>
+        </nav>
+      </header>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <%= yield %>
+      <%= javascript_pack_tag 'hello_vue' %>
+      <%= stylesheet_pack_tag 'hello_vue' %>
   </body>
 </html>

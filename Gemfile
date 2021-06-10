@@ -33,6 +33,9 @@ gem 'devise', git: "https://github.com/heartcombo/devise.git",  branch: "ca-omni
 gem 'omniauth-twitter'
 
 gem 'dotenv-rails'
+
+# Vue Install
+gem 'webpacker'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
