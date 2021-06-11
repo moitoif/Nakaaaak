@@ -7,9 +7,11 @@
       <%= form_with url:"upload" do |f| %>
         <section>
           <div class="illust-field">
-            <input type="file" name="illust" id="illust" accept="image/jpg,image/jpeg,image/png,image/gif" ref="preview" v-on:change="uploadFile">
-            <div v-if="url">
-              <img :src="url" style="width: 400px; height: auto;">
+            <div id="illust_preview">
+              <%= f.file_field "illust" ,accept: 'image/jpg,image/ipeg,image/png,image/gif', "v-on:change": "uploadFile", "ref": "preview" %>
+              <div v-if="url">
+                <img :src="url" style="width: 600px; height: auto;">
+              </div>
             </div>
           </div>
           <div class="field">
