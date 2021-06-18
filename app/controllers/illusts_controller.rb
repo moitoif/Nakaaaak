@@ -35,10 +35,26 @@ class IllustsController < ApplicationController
 
   # 投稿イラスト編集
   def edit
-
+    @illust = Image.find_by(id: params[:id])
   end
 
   def update
+    image = Image.find_by(id: params[:id])
+    logger.debug(image)
+    image.name = params[:title]
+    image.content = params[:caption]
 
+    if params[:illust]
+      image.filename = image.get_filename(current_user.id)
+      directory_path = "public/users/#{current_user.id}/"
+      File.binwrite(directory_path + image.filename, params[:illust].read)
+    end
+
+    if image.save
+      flash[:notice] = "編集が完了しました"
+      redirect_to("/mypage")
+    else
+      render("illusts/upload_form")
+    end
   end
 end

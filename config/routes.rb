@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   get "upload" => "illusts#upload_form"
   post "upload" => "illusts#upload"
   get "illust/edit/:id" => "illusts#edit"
-  post "illust/update" => "illusts#update"
+  post "illust/update/:id" => "illusts#update"
 
   # ユーザ
   # 新規登録

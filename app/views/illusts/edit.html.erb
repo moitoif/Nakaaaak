@@ -4,7 +4,7 @@
       イラスト投稿編集
     </div>
     <div class="form-body" id="app">
-      <%= form_with url:"upload" do |f| %>
+      <%= form_with url:"/illust/update/#{@illust.id}" do |f| %>
         <section>
           <div class="illust-field">
             <div id="illust_preview">
@@ -12,13 +12,16 @@
               <div v-if="url">
                 <img :src="url" style="width: 600px; height: auto;">
               </div>
+              <div v-else>
+                <img src="<%="/users/#{@illust.user_id}/#{@illust.filename}"%>" style="width: 600px; height: auto;">
+              </div>
             </div>
           </div>
           <div class="field">
-            <%= f.text_field "title", placeholder: "タイトル" %>
+            <%= f.text_field "title", placeholder: "タイトル", value: @illust.name %>
           </div>
           <div class="field">
-            <%= f.text_area "caption", placeholder: "説明" %>
+            <%= f.text_area "caption", placeholder: "説明", value: @illust.content %>
           </div>
           <div class="action">
             <%= f.submit "投稿" %>
