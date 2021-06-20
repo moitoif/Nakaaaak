@@ -94,6 +94,15 @@ main {
     // width: 50%;
     height: auto;
   }
+  label {
+    color: white;
+    background-color: #6dd2ff;
+    padding: 12px;
+    border-radius: 12px;
+  }
+  input[type="file"] {
+    display: none;
+  }
   .form-error {
     color: red;
   }
