@@ -1,5 +1,4 @@
 import Vue from 'vue/dist/vue.esm'
-// import IllustPreview from '../illust_preview.vue'
 
 document.addEventListener('DOMContentLoaded', () => {
   const app = new Vue({

@@ -9,11 +9,11 @@
           <div class="illust-field">
             <div id="illust_preview">
               <label for="illust">
-                ファイルを選択
+                <span>ファイルを選択</span>
                 <%= f.file_field "illust" ,accept: 'image/jpg,image/ipeg,image/png,image/gif', "v-on:change": "uploadFile", "ref": "preview", class: "illust_form"%>
               </label>
               <div v-if="url">
-                <img :src="url" style="width: 600px; height: auto;">
+                <img :src="url" class="preview_image">
               </div>
             </div>
           </div>
