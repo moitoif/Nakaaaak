@@ -1,5 +1,7 @@
 ja:
   activerecord:
+    models:
+      image: "イラスト"
     errors:
       messages:
         record_invalid: "バリデーションに失敗しました: %{errors}"
@@ -11,6 +13,10 @@ ja:
         name: ユーザー名
         email: メールアドレス
         password: パスワード
+      image:
+        name: "タイトル"
+        content: "説明文"
+        filename: "イラスト"
   date:
     abbr_day_names:
       - 日
@@ -140,7 +146,7 @@ ja:
     template:
       body: 次の項目を確認してください
       header:
-        one: "%{model}にエラーが発生しました"
+        one: "%{  }にエラーが発生しました"
         other: "%{model}に%{count}個のエラーが発生しました"
   helpers:
     select:
