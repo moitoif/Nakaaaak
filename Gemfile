@@ -31,6 +31,8 @@ gem 'rails-i18n'
 
 gem 'devise', git: "https://github.com/heartcombo/devise.git",  branch: "ca-omniauth-2"
 gem 'omniauth-twitter'
+gem 'devise-i18n'
+gem 'devise-i18n-views'
 
 gem 'dotenv-rails'
 
