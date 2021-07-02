@@ -135,3 +135,18 @@ main {
   box-shadow: 0 2px 6px #c1ced7;
   padding: 50px;
 }
+
+// フラッシュ
+.notice {
+  color: white;
+  padding: 12px, 0;
+  background-color: #2dff62;
+  text-align: center;
+}
+
+.alert {
+  color: white;
+  padding: 12px, 0;
+  background-color: #ff4234;
+  text-align: center;
+}
