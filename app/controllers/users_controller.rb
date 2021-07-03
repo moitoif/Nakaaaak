@@ -10,10 +10,7 @@ class UsersController < ApplicationController
     if @user && @user.authenticate(params[:password])
       redirect_to("/users/#{@user.id}") and return
     else
-      logger.debug("else句に突入")
-      @error_message = "メールアドレスまたはパスワードが異なります。"
       @email = params[:email]
-
       render action: :login_form and return
     end
   end
