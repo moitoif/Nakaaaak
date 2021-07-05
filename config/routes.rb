@@ -27,4 +27,7 @@ Rails.application.routes.draw do
   # 画像アップロード
   get "images" => "images#index"
 
+  # 質問ページ
+  get "questions/:id" => "questions#index"
+
 end

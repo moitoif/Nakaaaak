@@ -1,1 +1,17 @@
-テスト
+<div>
+  <div>
+    ここに本サイトの説明が入るイメージを用意する。
+  </div>
+  <h2>最新の質問</h2>
+  <div class="question-list">
+    <ul>
+      <% @illusts.each do |illust| %>
+        <li>
+          <a href=<%= "/questions/#{illust.id}" %>>
+            <%= illust.name %>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

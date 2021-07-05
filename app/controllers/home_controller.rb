@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
-    def top
-    end
+  def top
+    @illusts = Image.order(updated_at: :desc).limit(5)
+  end
 end

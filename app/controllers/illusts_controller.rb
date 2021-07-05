@@ -40,7 +40,6 @@ class IllustsController < ApplicationController
 
   def update
     image = Image.find_by(id: params[:id])
-    logger.debug(image)
     image.name = params[:title]
     image.content = params[:caption]
 
