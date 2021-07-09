@@ -11,6 +11,7 @@ class IllustsController < ApplicationController
     image.user_id = current_user.id
     image.name = params[:title]
     image.content = params[:caption]
+    image.answer_flg = FALSE
 
     if params[:illust]
       # ファイル名は、「今日の日付+連番４桁」
