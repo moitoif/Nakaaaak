@@ -26,10 +26,15 @@
           <div class="action">
             <%= f.submit "投稿" %>
           </div>
+          <div id="canvas-konva">
+            <Illust-Edit></Illust-Edit>
+          </div>
         </section>
       <% end %>
     </div>
   </div>
   <%= javascript_pack_tag "illust_preview" %>
   <%= stylesheet_pack_tag 'illust_preview' %>
+  <%= javascript_pack_tag "canvas_konva" %>
+  <%= stylesheet_pack_tag 'canvas_konva' %>
 </main>
