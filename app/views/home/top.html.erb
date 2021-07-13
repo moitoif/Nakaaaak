@@ -7,9 +7,7 @@
     <ul>
       <% @illusts.each do |illust| %>
         <li>
-          <a href=<%= "/questions/#{illust.id}" %>>
-            <%= illust.name %>
-          </a>
+          <%= link_to illust.name, "/questions/#{illust.id}", data: {"turbolinks" => false}  %>
         </li>
       <% end %>
     </ul>
