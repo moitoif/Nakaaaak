@@ -3,4 +3,12 @@
   <div class="question-content">
     <%= @question.content %>
   </div>
+  <%= content_tag :div ,'', id: "canvas-konva",
+    data: { file: @question.filename, user: @question.user_id } 
+  %>
+  <div>
+    コメントを追加する
+  </div>
+  <%= javascript_pack_tag "canvas_konva" %>
+  <%= stylesheet_pack_tag 'canvas_konva' %>
 </div>

@@ -2,30 +2,54 @@
   <div id="IllustCanvas">
     <v-stage :config="configKonva">
       <v-layer>
-        <v-circle :config="configCircle"></v-circle>
+        <v-image :config="configImage"></v-image>
       </v-layer>
     </v-stage>
   </div>
 </template>
 
 <script>
+// import 'pin.png'
+
+const canvasWidth = 1200;
+const canvasHeight = 800;
+
 export default {
+  props: {
+    file: {
+      type: String,
+      default: null
+    },
+    user: {
+      type: Number,
+      default: null
+    }
+  },
   data() {
     return {
       configKonva: {
-        width: screen.width / 2,
-        height: screen.height / 2
+        width: canvasWidth, 
+        height: canvasHeight,
       },
-      configCircle: {
-        x: 100,
-        y: 100,
-        radius: 70,
-        fill: "red",
-        stroke: "black",
-        strokeWidth: 4,
+      image: null,
+    };
+  },
+  created() {
+    const image = new Image(900,700);
+    image.src = require(`../../public/users/${this.user}/${this.file}`)
+    image.onload = () => {
+      this.image = image
+    };
+  },
+  computed: {
+    configImage: function() {
+      return {
+        x: 150,
+        y: 50,
+        image: this.image,
         draggable: true
       }
-    };
-  }
+    }
+  },
 };
 </script> 
