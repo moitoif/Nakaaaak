@@ -1,9 +1,28 @@
 // Place all the styles related to the questions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+// main {
+//   width: 1200px;
+//   margin-left: auto;
+//   margin-right: auto;
+// }
+
+#question-container {
+  margin: 60px;
+  .question-content {
+    width: 1200px;
+    margin-left: 235px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+h1 {
+  text-align: center;
+}
+
 .konvajs-content {
   border: 1px solid;
   margin-left: auto;
   margin-right: auto;
-
 }

@@ -356,3 +356,10 @@ export default {
   }
 };
 </script> 
+
+<style scoped>
+button {
+  margin-left: 235px;
+  margin-top: 20px;
+}
+</style>
