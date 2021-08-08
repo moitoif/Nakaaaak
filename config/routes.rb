@@ -29,5 +29,6 @@ Rails.application.routes.draw do
 
   # 質問ページ
   get "questions/:id" => "questions#index"
+  post "questions/upload/:id" => "questions#upload"
 
 end
