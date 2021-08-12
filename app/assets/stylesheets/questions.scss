@@ -17,14 +17,36 @@
   }
 }
 
+#question-image {
+  margin-top: 30px;
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 .comment {
+  border-top: 1px solid;
+  margin-top: 30px;
+}
+
+.comments {
   margin-top: 10px;
   padding-top: 10px;
   border-top: 1px solid;
 }
 
+#comment-area {
+  margin-top: 20px;
+}
+
 h1 {
   text-align: center;
+}
+
+.illust-field {
+  margin-bottom: 15px;
 }
 
 .konvajs-content {

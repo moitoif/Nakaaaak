@@ -1,33 +1,56 @@
-<div id="question-container">
-  <h1><%= @question.name %></h1>
-  <div class="question-content">
-    <%= @question.content %>
-  </div>
-  <div id="question-image">
-    <img src="<%="/users/#{@question.user_id}/#{@question.filename}"%>" style="width: 1000px;">
-  </div>
-  <div id="comment-area">
-    <h2>回答</h2>
-    <% @comments.each do |comment| %>
-      <div class="comment">
-        <h4>
-          <%= comment.username %>
-        </h4>
-        <div>
-          <%= comment.comment %>
+<main>
+  <div class="container">
+    <h1 class="form-header"><%= @question.name %></h1>
+    <div class="question-content">
+      <%= @question.content %>
+    </div>
+    <div id="question-image">
+      <img src="<%="/users/#{@question.user_id}/#{@question.filename}"%>" style="width: 1000px;">
+    </div>
+    <div id="comment-area">
+      <h2>回答</h2>
+      <% @comments.each do |comment| %>
+        <div class="comments">
+          <h4>
+            <%= comment.username %>
+          </h4>
+          <div>
+            <%= comment.comment %>
+          </div>
+          <% unless comment.filename.nil? %>
+            <div>
+              <img src="<%="/users/#{comment.comment_user_id}/#{comment.filename}"%>" style="width: 1000px;">
+            </div>
+          <% end %>
         </div>
-      </div>
-    <% end %>
-  </div>
-  <div class="comment">
-    <% if user_signed_in? %>
-      <h4>コメントを投稿する</h3>
-      <%= form_with url:"/questions/upload/#{@question.id}" do |f| %>
-        <%= f.text_area "comment", placeholder: "コメント"%>
-        <%= f.submit "投稿" %>
       <% end %>
-    <% else %>
-      <%= link_to 'ログインする', new_user_session_path %>
-    <% end %>
+    </div>
+    <div class="form-body">
+      <% if user_signed_in? %>
+        <div class="comment">
+          <h2>回答する</h2>
+          <%= form_with url:"/questions/upload/#{@question.id}" do |f| %>
+            <div class="illust-field">
+              <div id="illust_preview">
+                <label for="illust">
+                  <span>ファイルを選択</span>
+                  <%= f.file_field "illust" ,accept: 'image/jpg,image/ipeg,image/png,image/gif', "v-on:change": "uploadFile", "ref": "preview", class: "illust_form"%>
+                </label>
+                <div v-if="url">
+                  <img :src="url" class="preview_image">
+                </div>
+              </div>
+            </div>
+            <%= f.text_area "comment", placeholder: "コメント"%>
+            <%= f.submit "投稿する" %>
+          <% end %>
+        <% else %>
+          <%= link_to 'ログインする', new_user_session_path %>
+        <% end %>
+        </div>
+    </div>
   </div>
-</div>
+
+  <%= javascript_pack_tag "illust_preview" %>
+  <%= stylesheet_pack_tag 'illust_preview' %>
+</main>
