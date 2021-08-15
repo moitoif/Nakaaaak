@@ -26,8 +26,7 @@ class QuestionsController < ApplicationController
       image.name = "イラストID#{params[:id]}コメント用"
       image.content = "イラストID#{params[:id]}コメント用"
       image.user_id = current_user.id
-
-      image.save
+      image.comment_flg = true
     end
 
     if comment.save
