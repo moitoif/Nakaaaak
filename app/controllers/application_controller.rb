@@ -14,7 +14,9 @@ class ApplicationController < ActionController::Base
 
   protected 
   def configure_permitted_parameters
+    # ユーザー名を登録・編集可能とする。
     devise_parameter_sanitizer.permit(:sign_up, keys: [:username])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:username])
   end
 
 end
