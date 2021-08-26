@@ -24,10 +24,7 @@
             <%= f.text_area "caption", placeholder: "説明" %>
           </div>
           <div class="action">
-            <%= f.submit "投稿" %>
-          </div>
-          <div id="canvas-konva">
-            <Illust-Edit></Illust-Edit>
+            <%= f.submit "投稿する" %>
           </div>
         </section>
       <% end %>
@@ -35,6 +32,4 @@
   </div>
   <%= javascript_pack_tag "illust_preview" %>
   <%= stylesheet_pack_tag 'illust_preview' %>
-  <%= javascript_pack_tag "canvas_konva" %>
-  <%= stylesheet_pack_tag 'canvas_konva' %>
 </main>
