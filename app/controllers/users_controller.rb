@@ -34,6 +34,13 @@ class UsersController < ApplicationController
   def show
     # イラスト全取得
     image = Image.new
-    @illusts = image.get_illust_all(current_user.id)
+    @all_illusts = image.get_illust_all(current_user.id)
+
+    # 質問受付中のイラスト取得
+    @questions_illusts = Image.where(user_id: current_user.id).where(answer_flg: false).order(updated_at: :desc)
+
+    # 解決済みのイラスト取得
+    @answers_illusts = Image.where(user_id: current_user.id).where(answer_flg: true).order(updated_at: :desc)
+
   end
 end

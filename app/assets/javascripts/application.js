@@ -15,3 +15,32 @@
 //= require jquery
 //= require turbolinks
 //= require_tree .
+
+$(function() {
+  $('.all_illusts').slick({
+    arrows: true,
+    prevArrow:'<i class="fas fa-angle-left"></i>',
+    nextArrow:'<i class="fas fa-angle-right"></i>',
+    slidesToShow:5,
+    slidesToScroll: 5,
+    autoplay: true
+  });
+
+  $('.question-illusts').slick({
+    arrows: true,
+    prevArrow:'<i class="fas fa-angle-left"></i>',
+    nextArrow:'<i class="fas fa-angle-right"></i>',
+    slidesToShow:3,
+    slidesToScroll: 3,
+    autoplay: true
+  });
+
+  $('answer-illusts').slick({
+    arrows: true,
+    prevArrow:'<i class="fas fa-angle-left"></i>',
+    nextArrow:'<i class="fas fa-angle-right"></i>',
+    slidesToShow:3,
+    slidesToScroll: 3,
+    autoplay: true
+  });
+});
