@@ -16,7 +16,7 @@
 //= require turbolinks
 //= require_tree .
 
-$(function() {
+$(document).on('turbolinks:load',function() {
   $('.all_illusts').slick({
     arrows: true,
     prevArrow:'<i class="fas fa-angle-left"></i>',
