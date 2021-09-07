@@ -35,7 +35,7 @@ $(document).on('turbolinks:load',function() {
     autoplay: true
   });
 
-  $('answer-illusts').slick({
+  $('.answer-illusts').slick({
     arrows: true,
     prevArrow:'<i class="fas fa-angle-left"></i>',
     nextArrow:'<i class="fas fa-angle-right"></i>',

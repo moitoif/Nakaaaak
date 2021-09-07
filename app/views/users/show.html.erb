@@ -21,8 +21,8 @@
       </div>
     </div>
     <div class="answers">
+      <h3>解決済</h3>
       <div class="answer-illusts">
-        <h3>解決済</h3>
         <% @answers_illusts.each do |illust| %>
           <div class="illust">
             <%= link_to image_tag("/users/#{illust.user_id}/#{illust.filename}", class: "mypage"), "/illust/edit/#{illust.id}" %>
