@@ -1,18 +1,34 @@
 <main>
   <div class="container">
-    <ul>
-    <% @illusts.each do |illust| %>
-      <li>
-        <div>
-          <%= illust.id %>
-          <%= illust.name %>
-          <%= illust.filename %>
-          <img src="<%="/users/#{illust.user_id}/#{illust.filename}"%>" class="mypage_all">
-        </div>
-      </li>
-    <% end %>
-    </ul>
-
-    test
+    <div class="all">
+      <h2>投稿したイラスト</h2>
+      <div class="all_illusts">
+        <% @all_illusts.each do |illust| %>
+          <div class="illust">
+            <%= link_to image_tag("/users/#{illust.user_id}/#{illust.filename}", class: "mypage"), "/illust/edit/#{illust.id}" %>
+          </div>
+        <% end %>
+    </div>
+    
+    <div class="questions">
+      <h3>質問中</h3>
+      <div class="question-illusts">
+        <% @questions_illusts.each do |illust| %>
+          <div class="illust">
+            <%= link_to image_tag("/users/#{illust.user_id}/#{illust.filename}", class: "mypage"), "/illust/edit/#{illust.id}" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="answers">
+      <div class="answer-illusts">
+        <h3>解決済</h3>
+        <% @answers_illusts.each do |illust| %>
+          <div class="illust">
+            <%= link_to image_tag("/users/#{illust.user_id}/#{illust.filename}", class: "mypage"), "/illust/edit/#{illust.id}" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 </main>
