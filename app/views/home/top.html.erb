@@ -1,15 +1,32 @@
-<div>
-  <div>
-    ここに本サイトの説明が入るイメージを用意する。
-  </div>
-  <h2>最新の質問</h2>
-  <div class="question-list">
-    <ul>
+<main>
+  <div class="container">
+    <div>
+      ここに本サイトの説明が入るイメージを用意する。
+    </div>
+    <h2>最新の質問</h2>
+
+    <div class="questions-list">
       <% @illusts.each do |illust| %>
-        <li>
-          <%= link_to illust.name, "/questions/#{illust.id}", data: {"turbolinks" => false}  %>
-        </li>
+        <%= link_to "/questions/#{illust.id}" do %>
+          <div class="question-box">
+            <div class="thumbnail">
+              <%= image_tag("/users/#{illust.user_id}/#{illust.filename}") %>
+            </div>
+            <div class="question-content">
+              <div class="title">
+                <%= illust.name %>
+              </div>
+              <div class="status">
+                <% if illust.answer_flg === true %>
+                  <span class="solved">解決</span>
+                <% else %>
+                  <span class="rece">質問受付中</span>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        <% end %>
       <% end %>
-    </ul>
+    </div>
   </div>
-</div>
+</main>

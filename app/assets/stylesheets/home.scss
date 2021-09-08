@@ -191,3 +191,50 @@ main {
   background-color: #ff4234;
   text-align: center;
 }
+
+.questions-list {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  a {
+    display: block;
+    border-bottom: 1px solid black;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+.question-box {
+  display: flex;
+  align-items: center;
+  color: black;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  // border-bottom: 1px solid;
+  height: 200px;
+  padding: 20px;
+  .question-content {
+    margin-left: 20px;
+  }
+  .status {
+    .rece {
+      background-color: gray;
+      color: white;
+    }
+    .solved {
+      background-color: hotpink;
+      color: white;
+    }
+  }
+}
+.question-box:hover {
+  background-color: rgb(211, 208, 208);
+}
+
+.thumbnail {
+  img {
+    width: 150px;
+    height: 150px;
+  }
+}
