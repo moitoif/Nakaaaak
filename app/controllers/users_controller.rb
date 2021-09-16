@@ -32,15 +32,19 @@ class UsersController < ApplicationController
   end
 
   def show
-    # イラスト全取得
-    image = Image.new
-    @all_illusts = image.get_illust_all(current_user.id)
 
-    # 質問受付中のイラスト取得
-    @questions_illusts = image.get_illust(current_user.id, false)
-
-    # 解決済みのイラスト取得
-    @answers_illusts = image.get_illust(current_user.id, true)
-
+    if user_signed_in? 
+      # イラスト全取得
+      image = Image.new
+      @all_illusts = image.get_illust_all(current_user.id)
+  
+      # 質問受付中のイラスト取得
+      @questions_illusts = image.get_illust(current_user.id, false)
+  
+      # 解決済みのイラスト取得
+      @answers_illusts = image.get_illust(current_user.id, true)
+    else
+      redirect_to new_user_session_path
+    end
   end
 end
