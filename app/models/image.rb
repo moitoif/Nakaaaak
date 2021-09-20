@@ -10,6 +10,7 @@ class Image < ApplicationRecord
     presence: {message: "を選択してください" }
 
   belongs_to :comments, optional: true
+  belongs_to :users, optional: true
 
   def get_filename(current_user_id)
     image = Image.where(user_id: current_user_id).maximum(:filename)

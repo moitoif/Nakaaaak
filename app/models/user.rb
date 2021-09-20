@@ -9,5 +9,6 @@ class User < ApplicationRecord
   validates :username, presence: true
 
   has_many :comments, foreign_key: 'comment_user_id'
+  has_many :images, foreign_key: 'user_id'
   
 end
