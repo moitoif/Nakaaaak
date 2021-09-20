@@ -44,6 +44,7 @@ class UsersController < ApplicationController
       # 解決済みのイラスト取得
       @answers_illusts = image.get_illust(current_user.id, true)
     else
+      flash[:alert] = "ログインしてください"
       redirect_to new_user_session_path
     end
   end
