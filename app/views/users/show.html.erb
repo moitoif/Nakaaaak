@@ -3,30 +3,42 @@
     <div class="all">
       <h2>投稿したイラスト</h2>
       <div class="all_illusts">
-        <% @all_illusts.each do |illust| %>
-          <div class="illust">
-            <%= link_to image_tag("/users/#{illust.user_id}/#{illust.filename}", class: "mypage"), "/illust/edit/#{illust.id}" %>
-          </div>
+        <% if @all_illusts.empty? %>
+          データが存在しません
+        <% else %>
+          <% @all_illusts.each do |illust| %>
+            <div class="illust">
+              <%= link_to image_tag("/users/#{illust.user_id}/#{illust.filename}", class: "mypage"), "/illust/edit/#{illust.id}" %>
+            </div>
+          <% end %>
         <% end %>
     </div>
     
     <div class="questions">
       <h3>質問中</h3>
       <div class="question-illusts">
-        <% @questions_illusts.each do |illust| %>
-          <div class="illust">
-            <%= link_to image_tag("/users/#{illust.user_id}/#{illust.filename}", class: "mypage"), "/illust/edit/#{illust.id}" %>
-          </div>
+        <% if @questions_illusts.empty? %>
+          データが存在しません
+        <% else %>
+          <% @questions_illusts.each do |illust| %>
+            <div class="illust">
+              <%= link_to image_tag("/users/#{illust.user_id}/#{illust.filename}", class: "mypage"), "/illust/edit/#{illust.id}" %>
+            </div>
+          <% end %>
         <% end %>
       </div>
     </div>
     <div class="answers">
       <h3>解決済</h3>
       <div class="answer-illusts">
-        <% @answers_illusts.each do |illust| %>
-          <div class="illust">
-            <%= link_to image_tag("/users/#{illust.user_id}/#{illust.filename}", class: "mypage"), "/illust/edit/#{illust.id}" %>
-          </div>
+        <% if @answers_illusts.empty? %>
+          データが存在しません
+        <% else %>
+          <% @answers_illusts.each do |illust| %>
+            <div class="illust">
+              <%= link_to image_tag("/users/#{illust.user_id}/#{illust.filename}", class: "mypage"), "/illust/edit/#{illust.id}" %>
+            </div>
+          <% end %>
         <% end %>
       </div>
     </div>
