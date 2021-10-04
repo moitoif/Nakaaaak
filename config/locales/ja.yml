@@ -13,6 +13,7 @@ ja:
         name: ユーザー名
         email: メールアドレス
         password: パスワード
+        username: ユーザー名
       image:
         name: "タイトル"
         content: "説明文"
