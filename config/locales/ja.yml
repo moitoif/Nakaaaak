@@ -18,6 +18,8 @@ ja:
         name: "タイトル"
         content: "説明文"
         filename: "イラスト"
+      comment:
+        comment: "コメント"
   date:
     abbr_day_names:
       - 日
