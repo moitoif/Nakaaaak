@@ -7,7 +7,7 @@ class Image < ApplicationRecord
     presence: true,
     length: { maximum: 400 }
   validates :filename,
-    presence: {message: "を選択してください" }
+    presence: { message: "を選択してください" }
 
   belongs_to :comments, optional: true
   belongs_to :users, optional: true
