@@ -18,6 +18,10 @@ RSpec.describe "MyPage", type: :request do
         expect(response.status).to eq 200
       end
 
+      it "データが存在しない" do
+        expect(response.body).to match("データが存在しません")
+      end
+
     end
 
     context "ログインしていない場合" do
